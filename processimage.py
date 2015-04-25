@@ -25,6 +25,7 @@ from colortrans import *
 #img = "/Users/aarntz/Documents/thesis/tmuximgtests/timbers.jpg"
 #img = "/Users/aarntz/Documents/thesis/tmuximgtests/Ducky_Head_Web_Low-Res.jpg"
 img = "/Users/aarntz/Documents/thesis/tmuximgtests/vangogh.jpg"
+#img = "/Users/aarntz/Documents/thesis/tmuximgtests/jewsbury.jpg"
 
 def calculateResizeVals(numwpix, numhpix, numwboxes, numhboxes):
     wpixperbox = numwpix / numwboxes
@@ -44,12 +45,13 @@ def buildBoxTmuxelDict(boxnum,sizes):
     startpixelx = (boxnum[0] * sizes[0])
     startpixely = (boxnum[1] * sizes[1])
     indexhelper = sizes[0] / sizes[2]
-
+    #print indexhelper
     #print "startpixelx: %s" % startpixelx
     #print "startpixely: %s" % startpixely
     blockarr = makeOneTmuxelBlockArray(startpixelx, startpixely, sizes)
     #print blockarr
     for i in blockarr:
+        #print blockarr.index(i)
         if blockarr.index(i) < 6:
             tmuxelindexx = blockarr.index(i)
         else:
@@ -106,10 +108,13 @@ def calculatePixelNums(numboxesw, numboxesh, tmuxpixx, tmuxpixy):
 
 def makeOneTmuxelBlockArray(startpixx, startpixy, pixsizearr):
     container = []
+    #If pixsize[3] * 3 >= pixsizearray[1] you have to allow for three rows somehow
+    #pixsizearray[1] / pixsizearr[3]
+    #Fix this logic
     for i in range(startpixx, startpixx + (pixsizearr[0]-pixsizearr[2]), pixsizearr[2]):
-        for j in range(startpixy, startpixy + (pixsizearr[1]-pixsizearr[3]), pixsizearr[3]):
+        for j in range(startpixy, startpixy + (pixsizearr[1]-pixsizearr[3]) + 1, pixsizearr[3]):
             container.append([i,j])
-    print "Tmuxel Block Array: " + str(container)
+    #print "Tmuxel Block Array: " + str(sorted(container, key=itemgetter(1)))
     return sorted(container, key=itemgetter(1))
 
 def buildTmuxelBoxArray(numboxesw, numboxesh):

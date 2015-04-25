@@ -100,7 +100,7 @@ def fillpanes():
         #print ps1
         bash = 'PS1="'+ps1+'"'
         #bash = 'PS1=`echo -e "' + ps1 + '"`'
-        print index,bash
+        #print index,bash
         subprocess.call(['tmux', 'select-pane','-t', str(i)])
         #subprocess.call(['tmux', 'send-keys', '-t', str(i), 'clear', 'Enter'])
         subprocess.call(['tmux', 'send-keys', '-t', str(i), bash, 'Enter'])
