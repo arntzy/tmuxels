@@ -1,0 +1,6 @@
+€}q(Uprocessimage]q(UbuildBoxTmuxelDictqUpicqUremoveTilesNotSizedqUpixqU	makeTilesqUconvertPixArrayToColorArrayqUsizeq	Uimgq
+UbuildPixelArrayqUgetColorAverageForBlockqUconvertHextoExportStringqUcalculateResizeValsqUavgColorOfPixelsqUbuildWholeScreenDictqUmakeOneTmuxelBlockArrayqUaverageColorOfColorArrayqUloadPicqUcalculatePixelNumsqUboxqUbuildTmuxelBoxArrayqUsizesqUtestboxqeU
+colortrans]q(U	print_allqUshortqU	rgb2shortqURGB2SHORT_DICTqUSHORT2RGB_DICTqUrgbqUargq U	short2rgbq!UCLUTq"eUtmuxels]q#(U
+iToPaneNumq$UcreateDictsq%UpaneNumToIndexq&UcreateReverseLookupq'U	fillpanesq(Ucalc_even_splitsq)UbuildPS1q*UcreatePaneDictsq+U	tmuxarrayq,Uget_pane_sizeq-Upaneyq.Upanexq/U
+createTmuxq0U
+tmuxattachq1Uget_terminal_size_tputq2UsplitHorizontalq3Usizexq4Usizeyq5UsplitVerticalq6eu.

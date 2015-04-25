@@ -1,0 +1,44 @@
+***TODO***
+
+1. Get the image size, figure out how to resize image to the right size (206 X 56)
+
+2. Tile the image into (23 X 14) tiles
+
+3. tile those tiles into 6 x 3 tiles
+
+4. do a color analysis on each small tile to obtain color for prompt building
+
+5. Build the prompts with the closest colors
+
+***IMAGEMAGICK COMMANDS***
+
+**converting to tiles***
+convert timbers.jpg -crop 69x71 tile%04d.jpg
+
+**For removing tiles**
+ls -d *tile* | awk '{print "rm "$1}' > doit.sh
+
+**For getting attributes of image**
+identify -verbose timbers.jpg
+
+***Get exact size in pixels of tile
+identify -format "%[fx:w]x%[fx:h]" tile0358.jpg
+
+***GENERAL INFO***
+
+**TMUXELS**
+1. Each square has (6 x 3) matrix of stars in it. 
+2. There are 24 * 14 = 322 boxes
+3. There are 322 * 18 = 5796 pixels
+
+***TIMBERS.JPG***
+1. 1600x1000 == 1.6M Pixels
+2. 1600 / 23 = 69
+3. 1000 / 14 = 71
+4. Each big tile is (69 x 71)
+
+5. 69 / 6 = 11
+6. 71 / 3 = 23
+7. Each of the small tiles needs to be broken up into 11x23 tiles
+
+
